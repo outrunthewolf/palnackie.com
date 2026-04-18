@@ -1,0 +1,32 @@
+title: Palnackie
+description: The official website of Palnackie village, Dumfries and Galloway, Scotland.
+url: https://www.palnackie.scot
+baseurl: ""
+
+author:
+  name: Palnackie Community
+
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+  - _do_not_commit_CONTENT.txt
+
+timezone: Europe/London
+lang: en-GB

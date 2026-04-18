@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palnackie — Village on the Urr | Palnackie</title>
+  <meta name="description" content="Palnackie is a friendly, thriving small village on the estuary of the River Urr in Dumfries and Galloway, Scotland.">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Palnackie — Village on the Urr | Palnackie</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Palnackie — Village on the Urr" />
+<meta name="author" content="Palnackie Community" />
+<meta property="og:locale" content="en_GB" />
+<meta name="description" content="Palnackie is a friendly, thriving small village on the estuary of the River Urr in Dumfries and Galloway, Scotland." />
+<meta property="og:description" content="Palnackie is a friendly, thriving small village on the estuary of the River Urr in Dumfries and Galloway, Scotland." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Palnackie" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Palnackie — Village on the Urr" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Palnackie Community"},"description":"Palnackie is a friendly, thriving small village on the estuary of the River Urr in Dumfries and Galloway, Scotland.","headline":"Palnackie — Village on the Urr","name":"Palnackie","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:         #1c3345;
+      --slate:        #2a4a63;
+      --teal:         #2e7d8c;
+      --teal-light:   #3d9db0;
+      --stone:        #f4f0e8;
+      --stone-mid:    #e5dfd3;
+      --warm-grey:    #c8bfb0;
+      --text:         #2c2c2c;
+      --text-light:   #5a5a5a;
+      --white:        #ffffff;
+      --border:       #d5cfc3;
+      --radius:       6px;
+      --shadow:       0 2px 10px rgba(0,0,0,0.10);
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--text);
+      background: var(--stone);
+      line-height: 1.75;
+      font-size: 17px;
+    }
+
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { color: var(--navy); text-decoration: underline; }
+
+    /* HEADER */
+    .site-header {
+      background: var(--navy);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.30);
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      min-height: 62px;
+    }
+    .site-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      font-family: Georgia, serif;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      padding: 0.75rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .site-title:hover { color: var(--teal-light); text-decoration: none; }
+    .site-title .subtitle {
+      font-size: 0.75rem;
+      font-weight: 400;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: block;
+      line-height: 1;
+    }
+    .site-title-wrap { display: flex; flex-direction: column; gap: 0.15rem; }
+
+    /* NAV */
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.1rem;
+      align-items: center;
+    }
+    .site-nav a, .site-nav .nav-more-toggle {
+      color: rgba(255,255,255,0.85);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.83rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.75rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      display: inline-block;
+    }
+    .site-nav a:hover, .site-nav .nav-more-toggle:hover {
+      background: var(--slate);
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    /* DROPDOWN */
+    .nav-more {
+      position: relative;
+    }
+    .nav-more-toggle::after {
+      content: " ▾";
+      font-size: 0.7rem;
+    }
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      right: 0;
+      background: var(--navy);
+      border: 1px solid var(--slate);
+      border-radius: var(--radius);
+      min-width: 220px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.30);
+      z-index: 300;
+    }
+    .nav-more:hover .nav-dropdown,
+    .nav-more:focus-within .nav-dropdown {
+      display: block;
+    }
+    .nav-dropdown a {
+      display: block;
+      padding: 0.55rem 1rem;
+      color: rgba(255,255,255,0.85);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.83rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 0;
+      text-decoration: none;
+      transition: background 0.12s;
+    }
+    .nav-dropdown a:hover {
+      background: var(--slate);
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-dropdown a + a {
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* HERO (homepage only) */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 60%, var(--teal) 100%);
+      color: var(--white);
+      padding: 4rem 1.25rem 3.5rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: bold;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.65;
+    }
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    /* CARDS */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.13); }
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--navy); }
+    .card p { font-size: 0.93rem; color: var(--text-light); line-height: 1.6; }
+    .card-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card-link:hover { text-decoration: none; }
+    .card-tag {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+    .card-cta {
+      margin-top: 0.9rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--teal);
+    }
+    .card-cta:hover { color: var(--navy); text-decoration: underline; }
+
+    /* PAGE LAYOUT */
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+    .page-wrap.wide {
+      max-width: 1100px;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 2px solid var(--stone-mid);
+    }
+    .page-header .tag {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .page-header h1 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+    .page-header .lead {
+      font-size: 1.08rem;
+      color: var(--text-light);
+      line-height: 1.65;
+      max-width: 640px;
+    }
+
+    /* CONTENT */
+    .content h2 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin: 2rem 0 0.75rem;
+    }
+    .content h3 {
+      font-size: 1.15rem;
+      color: var(--slate);
+      margin: 1.5rem 0 0.5rem;
+    }
+    .content p { margin-bottom: 1.1rem; }
+    .content ul, .content ol {
+      margin: 0 0 1.1rem 1.5rem;
+    }
+    .content li { margin-bottom: 0.3rem; }
+
+    /* INFO BOX */
+    .info-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--teal);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.93rem;
+    }
+    .info-box p { margin-bottom: 0.4rem; }
+    .info-box p:last-child { margin-bottom: 0; }
+    .info-box strong { color: var(--navy); }
+
+    /* CONTACT BLOCK */
+    .contact-block {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.92rem;
+    }
+    .contact-block h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.65rem;
+    }
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.3rem 0;
+      line-height: 1.45;
+    }
+    .contact-icon {
+      flex-shrink: 0;
+      width: 1.1rem;
+      color: var(--teal);
+      font-style: normal;
+      text-align: center;
+    }
+
+    /* EMERGENCY TABLE */
+    .emergency-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
+      margin: 1.5rem 0;
+    }
+    .emergency-table th {
+      background: var(--navy);
+      color: var(--white);
+      text-align: left;
+      padding: 0.6rem 0.9rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .emergency-table td {
+      padding: 0.55rem 0.9rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .emergency-table tr:nth-child(even) td { background: var(--stone-mid); }
+    .emergency-table tr:hover td { background: #e0ddd6; }
+    .emergency-table .number {
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+    .emergency-table .emergency-number {
+      color: #c0392b;
+      font-weight: 700;
+    }
+
+    /* STAY CARD */
+    .stay-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow);
+    }
+    .stay-card h3 {
+      color: var(--navy);
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+    .stay-card .address {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      font-family: Arial, Helvetica, sans-serif;
+      margin-bottom: 0.9rem;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      padding: 0.55rem 1.3rem;
+      border-radius: var(--radius);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.1s;
+      letter-spacing: 0.02em;
+    }
+    .btn:hover { transform: translateY(-1px); text-decoration: none; }
+    .btn-primary { background: var(--teal); color: var(--white); }
+    .btn-primary:hover { background: var(--navy); color: var(--white); }
+    .btn-outline { background: transparent; color: var(--teal); border: 2px solid var(--teal); }
+    .btn-outline:hover { background: var(--teal); color: var(--white); }
+    .btn-white { background: var(--white); color: var(--navy); }
+    .btn-white:hover { background: var(--stone-mid); color: var(--navy); }
+
+    /* FOOTER */
+    .site-footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.65);
+      padding: 2.5rem 1.25rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.85rem;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 0.78rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .footer-col a {
+      display: block;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 0.35rem;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+    .footer-col a:hover { color: var(--white); text-decoration: none; }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 2rem auto 0;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.40);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .header-inner { padding: 0 0.75rem; gap: 0.25rem; }
+      .site-nav { gap: 0.05rem; }
+      .site-nav a, .site-nav .nav-more-toggle { padding: 0.35rem 0.5rem; font-size: 0.76rem; }
+      .page-wrap { padding: 1.5rem 0.75rem 3rem; }
+      .hero { padding: 2.5rem 0.75rem 2rem; }
+      .card-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="/">
+        <div class="site-title-wrap">
+          <span>Palnackie</span>
+          <span class="subtitle">Village on the Urr</span>
+        </div>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/village-shop/">Village Shop</a>
+        <a href="/flounders/">Flounders</a>
+        <a href="/village-hall/">Village Hall</a>
+        <a href="/glenisle-inn/">Glenisle Inn</a>
+        <a href="/the-port/">The Port</a>
+        <div class="nav-more">
+          <span class="nav-more-toggle" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">More</span>
+          <div class="nav-dropdown" role="menu">
+            <a href="/places-to-stay/" role="menuitem">Places to Stay</a>
+            <a href="/orchardton-tower/" role="menuitem">Orchardton Tower</a>
+            <a href="/village-walks/" role="menuitem">Village Walks Leaflet</a>
+            <a href="/businesses/" role="menuitem">Businesses &amp; Services</a>
+            <a href="/community-council/" role="menuitem">Community Council</a>
+            <a href="/buittle-quest/" role="menuitem">Buittle Quest SCIO</a>
+            <a href="/emergencies/" role="menuitem">Emergencies &amp; Useful Numbers</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+  <h1>Welcome to Palnackie</h1>
+  <p>A friendly, thriving small village on the estuary of the River Urr, working hard to keep the community services its people need.</p>
+  <div class="hero-links">
+    <a href="/village-shop/" class="btn btn-white">Village Shop</a>
+    <a href="/flounders/" class="btn btn-outline" style="border-color: rgba(255,255,255,0.6); color: rgba(255,255,255,0.9);">Flounders Cafe</a>
+    <a href="/places-to-stay/" class="btn btn-outline" style="border-color: rgba(255,255,255,0.6); color: rgba(255,255,255,0.9);">Places to Stay</a>
+  </div>
+</div>
+
+<div class="page-wrap wide">
+
+  <div class="card-grid">
+
+    <a class="card-link" href="/village-shop/">
+      <div class="card">
+        <span class="card-tag">Community-owned</span>
+        <h3>Village Shop</h3>
+        <p>Run for the community, by the community. Provisions, local produce, baked goods, gifts — and a Post Office twice a week.</p>
+        <span class="card-cta">Visit the shop &rarr;</span>
+      </div>
+    </a>
+
+    <a class="card-link" href="/flounders/">
+      <div class="card">
+        <span class="card-tag">Award-winning cafe</span>
+        <h3>Flounders</h3>
+        <p>Dumfries &amp; Galloway Life Cafe of the Year 2021. Coffee, cake, breakfasts and lunches — right next to the village shop.</p>
+        <span class="card-cta">Find out more &rarr;</span>
+      </div>
+    </a>
+
+    <a class="card-link" href="/village-hall/">
+      <div class="card">
+        <span class="card-tag">For hire</span>
+        <h3>Village Hall</h3>
+        <p>Seats up to 120 people with a large lawned garden. Available for weddings, parties, classes, dances and more.</p>
+        <span class="card-cta">Hire the hall &rarr;</span>
+      </div>
+    </a>
+
+    <a class="card-link" href="/glenisle-inn/">
+      <div class="card">
+        <span class="card-tag">Village pub</span>
+        <h3>The Glenisle Inn</h3>
+        <p>Open Friday, Saturday &amp; Sunday from 6pm. Pints, soft drinks, darts, pool, sport on the telly and light bites.</p>
+        <span class="card-cta">Plan a visit &rarr;</span>
+      </div>
+    </a>
+
+    <a class="card-link" href="/the-port/">
+      <div class="card">
+        <span class="card-tag">History</span>
+        <h3>The Port</h3>
+        <p>700 years of seafaring on the Solway Firth — from wool exports to smugglers and Clydesdale horses towing ships up the Urr.</p>
+        <span class="card-cta">Read the history &rarr;</span>
+      </div>
+    </a>
+
+    <a class="card-link" href="/orchardton-tower/">
+      <div class="card">
+        <span class="card-tag">Historic monument</span>
+        <h3>Orchardton Tower</h3>
+        <p>Scotland's only free-standing round tower house, a 30-minute walk from the village. Free to visit, with views to the top.</p>
+        <span class="card-cta">Plan your visit &rarr;</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="info-box" style="margin-top: 1rem;">
+    <p><strong>Stay connected.</strong> For local news, questions and recommendations, join the <a href="https://www.facebook.com/groups/125307394483757/">Palnackie Facebook group</a>.</p>
+    <p>Palnackie is served by public transport. <a href="https://www.traveline.info/">Plan your journey at Traveline</a>.</p>
+  </div>
+
+</div>
+
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>In the Village</h4>
+        <a href="/village-shop/">Village Shop</a>
+        <a href="/flounders/">Flounders Cafe</a>
+        <a href="/village-hall/">Village Hall</a>
+        <a href="/glenisle-inn/">The Glenisle Inn</a>
+        <a href="/the-port/">The Port</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visitors</h4>
+        <a href="/places-to-stay/">Places to Stay</a>
+        <a href="/orchardton-tower/">Orchardton Tower</a>
+        <a href="/village-walks/">Village Walks Leaflet</a>
+        <a href="/businesses/">Businesses &amp; Services</a>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <a href="/community-council/">Community Council</a>
+        <a href="/buittle-quest/">Buittle Quest SCIO</a>
+        <a href="/emergencies/">Emergencies &amp; Useful Numbers</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Palnackie &mdash; Dumfries &amp; Galloway, Scotland &middot; <a href="https://www.facebook.com/groups/125307394483757/">Join the Facebook group</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
