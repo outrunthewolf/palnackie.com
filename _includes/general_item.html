@@ -1,0 +1,59 @@
+{% assign d = site.data.pages[page.data_key] %}
+
+<div class="page-header">
+  <span class="tag">{{ d.tag }}</span>
+  <h1>{{ page.title }}</h1>
+  <p class="lead">{{ d.lead }}</p>
+</div>
+
+<div class="content">
+
+  {{ d.body_md | markdownify }}
+
+  {% if d.contact %}
+  <div class="contact-block">
+    <h4>Contact</h4>
+    {% if d.contact.address %}
+    <div class="contact-row">
+      <i class="contact-icon">&#x1F4CD;</i>
+      <span>{{ d.contact.address }}</span>
+    </div>
+    {% endif %}
+    {% if d.contact.phones %}
+    <div class="contact-row">
+      <i class="contact-icon">&#x260E;</i>
+      <div>
+        {% for phone in d.contact.phones %}
+        <a href="tel:{{ phone | remove: ' ' }}">{{ phone }}</a>{% unless forloop.last %}<br>{% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {% if d.contact.email %}
+    <div class="contact-row">
+      <i class="contact-icon">&#x2709;</i>
+      <span><a href="mailto:{{ d.contact.email }}">{{ d.contact.email }}</a></span>
+    </div>
+    {% endif %}
+    {% if d.contact.website %}
+    <div class="contact-row">
+      <i class="contact-icon">&#x1F310;</i>
+      <span><a href="{{ d.contact.website.url }}">{{ d.contact.website.label }}</a></span>
+    </div>
+    {% endif %}
+    {% if d.contact.facebook %}
+    <div class="contact-row">
+      <i class="contact-icon">f</i>
+      <span><a href="{{ d.contact.facebook }}">{{ d.contact.facebook_label | default: "Facebook" }}</a></span>
+    </div>
+    {% endif %}
+    {% if d.contact.instagram %}
+    <div class="contact-row">
+      <i class="contact-icon">&#x1F4F7;</i>
+      <span><a href="{{ d.contact.instagram }}">Instagram</a></span>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+</div>

@@ -1,0 +1,47 @@
+- name: Kippford View Holiday Park
+  address: "Palnackie, DG7 1PF"
+  description: "A caravan park that hires out a number of self-catering caravans and glamping pods. They also have room for tents, tourers, camper vans and motorhomes."
+  contact:
+    phones:
+      - "01557 870 267"
+    email: info@gillespie-leisure.co.uk
+    website:
+      url: "http://www.gillespie-leisure.co.uk/"
+      label: gillespie-leisure.co.uk
+    facebook: "https://www.facebook.com/search/top?q=kippford%20view%20holiday%20park"
+
+- name: Raider's Rest
+  address: "Palnackie, DG7 1PF"
+  description: "Farm glamping"
+  contact:
+    phones:
+      - ""
+    email: 
+    website:
+      url: ""
+      label: ""
+    facebook: ""
+
+- name: Kirkennan Estate Holiday Cottages
+  address: "Palnackie, DG7 1PE"
+  description: "Three self-catering cottages set among formal lawns, a walled garden, and woodland and fields on the banks of the River Urr. The Mews sleeps 5 in 2 bedrooms, Kirkennan Lodge sleeps 7 in 4 bedrooms, and Woodsedge sleeps 5 in 3 bedrooms. All cottages welcome up to 3 well-behaved dogs. EV charging points available."
+  contact:
+    phones:
+      - "01556 600438"
+      - "07896 337079"
+    website:
+      url: "https://www.kirkennan.co.uk/"
+      label: kirkennan.co.uk
+    facebook: "http://www.facebook.com/kirkennancottages"
+
+- name: Buittle Castle
+  address: "DG7 1PA (between Palnackie and Dalbeattie)"
+  description: "Bed &amp; breakfast accommodation in a historic building. Afternoon teas run from April to September, along with tours of the grounds and interiors. Also available as a wedding venue."
+  contact:
+    phones:
+      - "01556 509 072"
+    email: manager@buittlecastle.co.uk
+    website:
+      url: "https://www.buittlecastle.co.uk/"
+      label: buittlecastle.co.uk
+    facebook: "https://www.facebook.com/buittlecastle"

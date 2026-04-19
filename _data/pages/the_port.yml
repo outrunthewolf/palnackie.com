@@ -1,0 +1,8 @@
+card_order: 5
+homepage_card:
+  show: true
+  tag: "History"
+  title: "The Port"
+  description: "700 years of seafaring on the Solway Firth — from wool exports to smugglers and Clydesdale horses towing ships up the Urr."
+  url: "/the-port/"
+  cta: "Read the history"

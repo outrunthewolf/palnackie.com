@@ -1,0 +1,133 @@
+card_order: 9
+homepage_card:
+  show: false
+  tag: "Community information"
+  title: "Emergencies & Useful Numbers"
+  description: "Key emergency contacts and useful numbers for Palnackie and the wider Dumfries & Galloway area."
+  url: "/emergencies/"
+  cta: "View numbers"
+tag: "Community information"
+lead: "Key emergency contacts and useful numbers for Palnackie and the wider Dumfries &amp; Galloway area."
+alert: "In an emergency, always call 999 first. For non-urgent police matters, call 101. For non-urgent medical advice, call NHS 24 on 111."
+sections:
+  - title: "Emergency Services"
+    entries:
+      - service: "Police Scotland"
+        numbers:
+          - value: "999"
+            type: emergency
+          - value: "101"
+            type: normal
+        notes: "999 for emergencies; 101 for non-urgent matters"
+      - service: "Scottish Fire & Rescue"
+        numbers:
+          - value: "999"
+            type: emergency
+      - service: "Scottish Ambulance Service"
+        numbers:
+          - value: "999"
+            type: emergency
+      - service: "HM Coastguard"
+        numbers:
+          - value: "999"
+            type: emergency
+      - service: "Mountain Rescue"
+        numbers:
+          - value: "999"
+            type: emergency
+        notes: "Ask for Police, then Mountain Rescue"
+
+  - title: "Health"
+    entries:
+      - service: "NHS Dumfries & Galloway"
+        numbers:
+          - value: "01387 246246"
+            type: normal
+        notes: "Main switchboard"
+      - service: "NHS 24"
+        numbers:
+          - value: "111"
+            type: normal
+        notes: "For non-emergencies"
+
+  - title: "Flooding & Weather"
+    entries:
+      - service: "SEPA Floodline"
+        numbers:
+          - value: "08459 881188"
+            type: normal
+        notes_link:
+          url: "https://www.sepa.org.uk"
+          label: "sepa.org.uk"
+      - service: "Scottish Flood Forum"
+        numbers:
+          - value: "01315 639392"
+            type: normal
+        notes_link:
+          url: "https://www.scottishfloodforum.org"
+          label: "scottishfloodforum.org"
+      - service: "Met Office"
+        notes_link:
+          url: "https://www.metoffice.gov.uk"
+          label: "metoffice.gov.uk"
+      - service: "Emergency preparedness"
+        notes_link:
+          url: "https://ready.scot/respond/severe-weather"
+          label: "ready.scot"
+
+  - title: "Utilities"
+    entries:
+      - service: "Scottish Power (electricity)"
+        numbers:
+          - value: "105"
+            type: normal
+        notes_link:
+          url: "https://www.spenergynetworks.co.uk/pages/power_cuts_map.aspx"
+          label: "Power cuts map"
+      - service: "Gas emergency"
+        numbers:
+          - value: "0800 111999"
+            type: normal
+        notes: "Suspected gas leaks"
+      - service: "Scottish Water"
+        numbers:
+          - value: "08000 778778"
+            type: normal
+        notes_link:
+          url: "https://www.scottishwater.co.uk"
+          label: "scottishwater.co.uk"
+      - service: "BT Openreach"
+        numbers:
+          - value: "08000 232023"
+            type: normal
+        notes: "Issues with phone and internet"
+
+  - title: "Local Council & Travel"
+    entries:
+      - service: "D&G Council"
+        numbers:
+          - value: "03033 333000"
+            type: normal
+        notes_link:
+          url: "https://www.dumfriesandgalloway.gov.uk"
+          label: "dumfriesandgalloway.gov.uk"
+      - service: "Emergency school closures"
+        notes_link:
+          url: "https://info.dumgal.gov.uk/esc/home"
+          label: "info.dumgal.gov.uk/esc"
+      - service: "Public transport"
+        notes_link:
+          url: "http://www.travelinescotland.com"
+          label: "travelinescotland.com"
+      - service: "Motorways & trunk roads"
+        notes_link:
+          url: "http://trafficscotland.org/"
+          label: "trafficscotland.org"
+      - service: "Rail disruption"
+        notes_link:
+          url: "https://www.nationalrail.co.uk/service_disruptions/indicator.aspx"
+          label: "National Rail"
+      - service: "BBC News"
+        notes_link:
+          url: "https://www.bbc.co.uk/news"
+          label: "bbc.co.uk/news"

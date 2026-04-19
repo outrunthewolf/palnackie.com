@@ -2,23 +2,26 @@
 layout: page
 title: "Emergencies & Useful Numbers"
 description: "Emergency contacts and useful numbers for Palnackie and Dumfries & Galloway — police, fire, ambulance, flood, utilities and more."
+data_key: emergencies
 ---
 
+{% assign d = site.data.pages[page.data_key] %}
+
 <div class="page-header">
-  <span class="tag">Community information</span>
-  <h1>Emergencies &amp; Useful Numbers</h1>
-  <p class="lead">Key emergency contacts and useful numbers for Palnackie and the wider Dumfries &amp; Galloway area.</p>
+  <span class="tag">{{ d.tag }}</span>
+  <h1>{{ page.title }}</h1>
+  <p class="lead">{{ d.lead }}</p>
 </div>
 
 <div class="content">
 
   <div class="info-box" style="border-left-color: #c0392b;">
     <p><strong>In an emergency, always call 999 first.</strong></p>
-    <p>For non-urgent police matters, call 101. For non-urgent medical advice, call NHS 24 on 111.</p>
+    <p>{{ d.alert }}</p>
   </div>
 
-  <h2>Emergency Services</h2>
-
+  {% for section in d.sections %}
+  <h2>{{ section.title }}</h2>
   <table class="emergency-table">
     <thead>
       <tr>
@@ -28,168 +31,27 @@ description: "Emergency contacts and useful numbers for Palnackie and Dumfries &
       </tr>
     </thead>
     <tbody>
+      {% for entry in section.entries %}
       <tr>
-        <td>Police Scotland</td>
-        <td><span class="emergency-number">999</span> / <span class="number">101</span></td>
-        <td>999 for emergencies; 101 for non-urgent matters</td>
+        <td>{{ entry.service }}</td>
+        <td>
+          {% if entry.numbers %}
+            {% for num in entry.numbers %}
+              {% if num.type == "emergency" %}<span class="emergency-number">{{ num.value }}</span>{% else %}<span class="number">{{ num.value }}</span>{% endif %}{% unless forloop.last %} / {% endunless %}
+            {% endfor %}
+          {% else %}
+            &mdash;
+          {% endif %}
+        </td>
+        <td>
+          {% if entry.notes %}{{ entry.notes }}{% endif %}
+          {% if entry.notes_link %}<a href="{{ entry.notes_link.url }}">{{ entry.notes_link.label }}</a>{% endif %}
+          {% unless entry.notes or entry.notes_link %}&mdash;{% endunless %}
+        </td>
       </tr>
-      <tr>
-        <td>Scottish Fire &amp; Rescue</td>
-        <td><span class="emergency-number">999</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Scottish Ambulance Service</td>
-        <td><span class="emergency-number">999</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>HM Coastguard</td>
-        <td><span class="emergency-number">999</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Mountain Rescue</td>
-        <td><span class="emergency-number">999</span></td>
-        <td>Ask for Police, then Mountain Rescue</td>
-      </tr>
+      {% endfor %}
     </tbody>
   </table>
-
-  <h2>Health</h2>
-
-  <table class="emergency-table">
-    <thead>
-      <tr>
-        <th>Service</th>
-        <th>Number</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>NHS Dumfries &amp; Galloway</td>
-        <td><span class="number">01387 246246</span></td>
-        <td>Main switchboard</td>
-      </tr>
-      <tr>
-        <td>NHS 24</td>
-        <td><span class="number">111</span></td>
-        <td>For non-emergencies</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2>Flooding &amp; Weather</h2>
-
-  <table class="emergency-table">
-    <thead>
-      <tr>
-        <th>Service</th>
-        <th>Number / Link</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>SEPA Floodline</td>
-        <td><span class="number">08459 881188</span></td>
-        <td><a href="https://www.sepa.org.uk">sepa.org.uk</a></td>
-      </tr>
-      <tr>
-        <td>Scottish Flood Forum</td>
-        <td><span class="number">01315 639392</span></td>
-        <td><a href="https://www.scottishfloodforum.org">scottishfloodforum.org</a></td>
-      </tr>
-      <tr>
-        <td>Met Office</td>
-        <td>&mdash;</td>
-        <td><a href="https://www.metoffice.gov.uk">metoffice.gov.uk</a></td>
-      </tr>
-      <tr>
-        <td>Emergency preparedness</td>
-        <td>&mdash;</td>
-        <td><a href="https://ready.scot/respond/severe-weather">ready.scot</a></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2>Utilities</h2>
-
-  <table class="emergency-table">
-    <thead>
-      <tr>
-        <th>Service</th>
-        <th>Number / Link</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Scottish Power (electricity)</td>
-        <td><span class="number">105</span></td>
-        <td><a href="https://www.spenergynetworks.co.uk/pages/power_cuts_map.aspx">Power cuts map</a></td>
-      </tr>
-      <tr>
-        <td>Gas emergency</td>
-        <td><span class="number">0800 111999</span></td>
-        <td>Suspected gas leaks</td>
-      </tr>
-      <tr>
-        <td>Scottish Water</td>
-        <td><span class="number">08000 778778</span></td>
-        <td><a href="https://www.scottishwater.co.uk">scottishwater.co.uk</a></td>
-      </tr>
-      <tr>
-        <td>BT Openreach</td>
-        <td><span class="number">08000 232023</span></td>
-        <td>Issues with phone and internet</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2>Local Council &amp; Travel</h2>
-
-  <table class="emergency-table">
-    <thead>
-      <tr>
-        <th>Service</th>
-        <th>Number / Link</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>D&amp;G Council</td>
-        <td><span class="number">03033 333000</span></td>
-        <td><a href="https://www.dumfriesandgalloway.gov.uk">dumfriesandgalloway.gov.uk</a></td>
-      </tr>
-      <tr>
-        <td>Emergency school closures</td>
-        <td>&mdash;</td>
-        <td><a href="https://info.dumgal.gov.uk/esc/home">info.dumgal.gov.uk/esc</a></td>
-      </tr>
-      <tr>
-        <td>Public transport</td>
-        <td>&mdash;</td>
-        <td><a href="http://www.travelinescotland.com">travelinescotland.com</a></td>
-      </tr>
-      <tr>
-        <td>Motorways &amp; trunk roads</td>
-        <td>&mdash;</td>
-        <td><a href="http://trafficscotland.org/">trafficscotland.org</a></td>
-      </tr>
-      <tr>
-        <td>Rail disruption</td>
-        <td>&mdash;</td>
-        <td><a href="https://www.nationalrail.co.uk/service_disruptions/indicator.aspx">National Rail</a></td>
-      </tr>
-      <tr>
-        <td>BBC News</td>
-        <td>&mdash;</td>
-        <td><a href="https://www.bbc.co.uk/news">bbc.co.uk/news</a></td>
-      </tr>
-    </tbody>
-  </table>
+  {% endfor %}
 
 </div>

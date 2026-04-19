@@ -1,0 +1,8 @@
+card_order: 3
+homepage_card:
+  show: true
+  tag: "For hire"
+  title: "Village Hall"
+  description: "Seats up to 120 people with a large lawned garden. Available for weddings, parties, classes, dances and more."
+  url: "/village-hall/"
+  cta: "Hire the hall"

@@ -1,0 +1,21 @@
+card_order: 7
+homepage_card:
+  show: false
+  tag: "Community charity"
+  title: "Buittle Quest SCIO"
+  description: "The charity set up to benefit the people of Buittle Parish — owners of the village hall and the north side of the port."
+  url: "/buittle-quest/"
+  cta: "Find out more"
+tag: "Scottish Charitable Incorporated Organisation"
+lead: "The charity set up to benefit the people of Buittle Parish — and owners of our village hall and the north side of the port."
+body_md: |
+  Buittle Quest was set up to benefit the people of Buittle Parish and members of the public, groups and organisations visiting Buittle Parish. Buittle Parish is the area administered by [Buittle Parish Community Council](/community-council/).
+
+  The Buittle Parish Boundary Map can be found here: [info.dumgal.gov.uk](https://info.dumgal.gov.uk/CommunityCouncils/Home/Detail/71).
+
+  Buittle Quest owns our [village hall](/village-hall/) and the north side of our port.
+contact:
+  address: "Buittle Quest, The Village Hall, Port Road, Palnackie, DG7 1PQ"
+  email: info@buittlequest.co.uk
+  facebook: "https://www.facebook.com/groups/3151318831579592/"
+  facebook_label: "Facebook group"

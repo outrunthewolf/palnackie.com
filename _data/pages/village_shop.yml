@@ -1,0 +1,8 @@
+card_order: 1
+homepage_card:
+  show: true
+  tag: "Community-owned"
+  title: "Village Shop"
+  description: "Run for the community, by the community. Provisions, local produce, baked goods, gifts — and a Post Office twice a week."
+  url: "/village-shop/"
+  cta: "Visit the shop"

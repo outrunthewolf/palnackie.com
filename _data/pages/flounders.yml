@@ -1,0 +1,32 @@
+card_order: 2
+homepage_card:
+  show: false
+  tag: "Award-winning cafe"
+  title: "Flounders"
+  description: "Dumfries &amp; Galloway Life Cafe of the Year 2021. Coffee, cake, breakfasts and lunches — right next to the village shop."
+  url: "/flounders/"
+  cta: "Find out more"
+body_md: |
+  Palnackie's award-winning community cafe will see you right for coffee, hot chocolate, cake, breakfasts and lunches. It's very conveniently located next to the village shop.
+  
+  We can get very busy, so if you want to be guaranteed a table for you and your companions, it's always good to <strong>reserve in advance</strong>. On a nice warm day, there are additional outdoor tables for you.
+
+  Please check our Facebook page for last-minute changes in opening times.
+
+  ## Private Hire
+
+  The cafe is also available for <strong>private hire outside of its normal opening times</strong>. It seats 22 people, making it ideal for:
+
+  - Book clubs
+  - Knit &amp; natter groups
+  - Small training sessions
+  - Cookery lessons
+  - Get-togethers and celebrations
+
+  Please inquire for availability. If 22 is too small, the <a href="/village-hall/">Village Hall</a> can be hired with a capacity of 120.
+contact:
+  address: "Flounders Cafe, Glen Road, DG7 1PH, Palnackie"
+  phones: 01556 600456
+  email: palnackievillageshop@yahoo.co.uk
+  facebook: "https://www.facebook.com/Palnackie2014villageshop"
+  facebook_label: "Facebook group"

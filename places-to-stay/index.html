@@ -12,110 +12,51 @@ description: "Accommodation in and around Palnackie, Dumfries and Galloway — c
 
 <div class="content">
 
+  {% for place in site.data.places_to_stay %}
   <div class="stay-card">
-    <h3>Holly Cottage</h3>
-    <p class="address">2 Yettan Terrace, Palnackie, DG7 1PG</p>
-    <p>An attractive cottage located in a quiet corner of Palnackie. Self-catering and sleeps 6 people (and 1 dog) in 3 bedrooms.</p>
+    <h3>{{ place.name }}</h3>
+    <p class="address">{{ place.address }}</p>
+    <p>{{ place.description }}</p>
+    {% if place.contact %}
     <div class="contact-block" style="margin-top: 1rem;">
       <h4>Contact</h4>
+      {% if place.contact.phones %}
       <div class="contact-row">
         <i class="contact-icon">&#x260E;</i>
         <div>
-          <a href="tel:01984623801">01984 623801</a><br>
-          <a href="tel:07903435822">07903 435822</a>
+          {% for phone in place.contact.phones %}
+          <a href="tel:{{ phone | remove: ' ' }}">{{ phone }}</a>{% unless forloop.last %}<br>{% endunless %}
+          {% endfor %}
         </div>
       </div>
+      {% endif %}
+      {% if place.contact.email %}
       <div class="contact-row">
         <i class="contact-icon">&#x2709;</i>
-        <span><a href="mailto:hollycottagepalnackie@yahoo.com">hollycottagepalnackie@yahoo.com</a></span>
+        <span><a href="mailto:{{ place.contact.email }}">{{ place.contact.email }}</a></span>
       </div>
+      {% endif %}
+      {% if place.contact.website %}
       <div class="contact-row">
         <i class="contact-icon">&#x1F310;</i>
-        <span><a href="http://www.hollycottagepalnackie.com">hollycottagepalnackie.com</a></span>
+        <span><a href="{{ place.contact.website.url }}">{{ place.contact.website.label }}</a></span>
       </div>
+      {% endif %}
+      {% if place.contact.facebook %}
       <div class="contact-row">
         <i class="contact-icon">f</i>
-        <span><a href="https://www.facebook.com/hollycottagepalnackie">Facebook</a></span>
+        <span><a href="{{ place.contact.facebook }}">Facebook</a></span>
       </div>
+      {% endif %}
+      {% if place.contact.instagram %}
       <div class="contact-row">
         <i class="contact-icon">&#x1F4F7;</i>
-        <span><a href="https://www.instagram.com/hollycottagepalnackie">Instagram</a></span>
+        <span><a href="{{ place.contact.instagram }}">Instagram</a></span>
       </div>
+      {% endif %}
     </div>
+    {% endif %}
   </div>
-
-  <div class="stay-card">
-    <h3>Kippford View Holiday Park</h3>
-    <p class="address">Palnackie, DG7 1PF</p>
-    <p>A caravan park that hires out a number of self-catering caravans and glamping pods. They also have room for tents, tourers, camper vans and motorhomes.</p>
-    <div class="contact-block" style="margin-top: 1rem;">
-      <h4>Contact</h4>
-      <div class="contact-row">
-        <i class="contact-icon">&#x260E;</i>
-        <span><a href="tel:01557870267">01557 870 267</a></span>
-      </div>
-      <div class="contact-row">
-        <i class="contact-icon">&#x2709;</i>
-        <span><a href="mailto:info@gillespie-leisure.co.uk">info@gillespie-leisure.co.uk</a></span>
-      </div>
-      <div class="contact-row">
-        <i class="contact-icon">&#x1F310;</i>
-        <span><a href="http://www.gillespie-leisure.co.uk/">gillespie-leisure.co.uk</a></span>
-      </div>
-      <div class="contact-row">
-        <i class="contact-icon">f</i>
-        <span><a href="https://www.facebook.com/search/top?q=kippford%20view%20holiday%20park">Facebook</a></span>
-      </div>
-    </div>
-  </div>
-
-  <div class="stay-card">
-    <h3>Kirkennan Estate Holiday Cottages</h3>
-    <p class="address">Palnackie, DG7 1PE</p>
-    <p>Three self-catering cottages set among formal lawns, a walled garden, and woodland and fields on the banks of the River Urr. The Mews sleeps 5 in 2 bedrooms, Kirkennan Lodge sleeps 7 in 4 bedrooms, and Woodsedge sleeps 5 in 3 bedrooms. All cottages welcome up to 3 well-behaved dogs. EV charging points available.</p>
-    <div class="contact-block" style="margin-top: 1rem;">
-      <h4>Contact</h4>
-      <div class="contact-row">
-        <i class="contact-icon">&#x260E;</i>
-        <div>
-          <a href="tel:01556600438">01556 600438</a><br>
-          <a href="tel:07896337079">07896 337079</a>
-        </div>
-      </div>
-      <div class="contact-row">
-        <i class="contact-icon">&#x1F310;</i>
-        <span><a href="https://www.kirkennan.co.uk/">kirkennan.co.uk</a></span>
-      </div>
-      <div class="contact-row">
-        <i class="contact-icon">f</i>
-        <span><a href="http://www.facebook.com/kirkennancottages">Facebook</a></span>
-      </div>
-    </div>
-  </div>
-
-  <div class="stay-card">
-    <h3>Buittle Castle</h3>
-    <p class="address">DG7 1PA (between Palnackie and Dalbeattie)</p>
-    <p>Bed &amp; breakfast accommodation in a historic building. Afternoon teas run from April to September, along with tours of the grounds and interiors. Also available as a wedding venue.</p>
-    <div class="contact-block" style="margin-top: 1rem;">
-      <h4>Contact</h4>
-      <div class="contact-row">
-        <i class="contact-icon">&#x260E;</i>
-        <span><a href="tel:01556509072">01556 509 072</a></span>
-      </div>
-      <div class="contact-row">
-        <i class="contact-icon">&#x2709;</i>
-        <span><a href="mailto:manager@buittlecastle.co.uk">manager@buittlecastle.co.uk</a></span>
-      </div>
-      <div class="contact-row">
-        <i class="contact-icon">&#x1F310;</i>
-        <span><a href="https://www.buittlecastle.co.uk/">buittlecastle.co.uk</a></span>
-      </div>
-      <div class="contact-row">
-        <i class="contact-icon">f</i>
-        <span><a href="https://www.facebook.com/buittlecastle">Facebook</a></span>
-      </div>
-    </div>
-  </div>
+  {% endfor %}
 
 </div>

@@ -1,0 +1,21 @@
+card_order: 4
+homepage_card:
+  show: true
+  tag: "Village pub"
+  title: "The Glenisle Inn"
+  description: "Open Friday, Saturday &amp; Sunday from 6pm. Pints, soft drinks, darts, pool, sport on the telly and light bites."
+  url: "/glenisle-inn/"
+  cta: "Plan a visit"
+tag: "Village pub"
+lead: "Come and have a pint or a soft drink, meet up with folk, play darts or pool, watch the sport and enjoy a light bite."
+body_md: |
+  Our village pub is open **Friday, Saturday & Sunday from 6pm** — please check the Glenisle Inn Facebook page for any changes to opening times or for upcoming sporting and seasonal events.
+
+  <div class="info-box">
+    <p><strong>Opening hours:</strong> Friday, Saturday &amp; Sunday from 6pm</p>
+    <p>Always check Facebook for last-minute changes.</p>
+  </div>
+contact:
+  email: theglenisleinn@gmail.com
+  facebook: "https://www.facebook.com/theglenisleinn"
+  facebook_label: "Facebook page"

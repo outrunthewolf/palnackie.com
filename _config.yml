@@ -1,7 +1,7 @@
 title: Palnackie
 description: The official website of Palnackie village, Dumfries and Galloway, Scotland.
-url: https://www.palnackie.scot
-baseurl: "/palnackie.com"
+url: https://palnackie.com
+baseurl: ""
 
 author:
   name: Palnackie Community
