@@ -379,6 +379,21 @@ a:hover { color: var(--navy); text-decoration: underline; }
   margin-bottom: 0.9rem;
 }
 
+/* MAP */
+.map-section {
+  margin: 2rem 0;
+}
+.map-heading {
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+.map-link {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+
 /* BUTTONS */
 .btn {
   display: inline-block;
