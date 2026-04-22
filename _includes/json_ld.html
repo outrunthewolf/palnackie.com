@@ -1,0 +1,22 @@
+{% assign s = site.data.site_info %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Place",
+  "name": "{{ s.name }}",
+  "description": "{{ s.description }}",
+  "url": "{{ s.url }}",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": {{ s.geo.latitude }},
+    "longitude": {{ s.geo.longitude }}
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "{{ s.address.locality }}",
+    "addressRegion": "{{ s.address.region }}",
+    "addressCountry": "{{ s.address.country }}"
+  },
+  "hasMap": "{{ s.map_url }}"
+}
+</script>

@@ -1,0 +1,11 @@
+name: Palnackie
+description: "A friendly, thriving small village on the estuary of the River Urr in Dumfries and Galloway, Scotland."
+url: https://palnackie.com
+geo:
+  latitude: 54.893
+  longitude: -3.846
+address:
+  locality: Palnackie
+  region: Dumfries and Galloway
+  country: GB
+map_url: "https://www.openstreetmap.org/?mlat=54.893&mlon=-3.846#map=14/54.893/-3.846"
