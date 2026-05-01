@@ -11,7 +11,6 @@ body_md: |
   
   We can get very busy, so if you want to be guaranteed a table for you and your companions, it's always good to <strong>reserve in advance</strong>. On a nice warm day, there are additional outdoor tables for you.
 
-  Please check our Facebook page for last-minute changes in opening times.
 
   ## Private Hire
 
@@ -24,6 +23,12 @@ body_md: |
   - Get-togethers and celebrations
 
   Please inquire for availability. If 22 is too small, the <a href="/village-hall/">Village Hall</a> can be hired with a capacity of 120.
+opening_hours:
+  summary: "Thursday – Sunday, 10am – 3pm"
+  rows:
+    - label: "Open"
+      value: "Thursday – Sunday, 10am – 3pm"
+  note: "Check our Facebook page for last-minute changes."
 contact:
   address: "Flounders Cafe, Glen Road, DG7 1PH, Palnackie"
   phones: 01556 600456

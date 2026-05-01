@@ -10,6 +10,30 @@
 
   {{ d.body_md | markdownify }}
 
+  {% if d.opening_hours %}
+  <div class="hours-block">
+    <h4>Opening Hours</h4>
+    {% if d.opening_hours.days %}
+      {% for slot in d.opening_hours.days %}
+      <div class="hours-row{% if slot.closed %} is-closed{% endif %}">
+        <span class="hours-label">{{ slot.day }}</span>
+        <span>{% if slot.closed %}Closed{% else %}{{ slot.times }}{% if slot.note %} <span class="hours-sub">({{ slot.note }})</span>{% endif %}{% endif %}</span>
+      </div>
+      {% endfor %}
+    {% elsif d.opening_hours.rows %}
+      {% for row in d.opening_hours.rows %}
+      <div class="hours-row">
+        <span class="hours-label">{{ row.label }}</span>
+        <span>{{ row.value }}</span>
+      </div>
+      {% endfor %}
+    {% endif %}
+    {% if d.opening_hours.note %}
+    <p class="hours-note">{{ d.opening_hours.note }}</p>
+    {% endif %}
+  </div>
+  {% endif %}
+
   {% if d.contact %}
   <div class="contact-block">
     <h4>Contact</h4>

@@ -6,3 +6,11 @@ homepage_card:
   description: "Run for the community, by the community. Provisions, local produce, baked goods, gifts — and a Post Office twice a week."
   url: "/village-shop/"
   cta: "Visit the shop"
+opening_hours:
+  summary: "Every day, 9am – 2pm · Post Office: Fridays 9–10am"
+  rows:
+    - label: "Shop"
+      value: "Every day, 9am – 2pm"
+    - label: "Post Office"
+      value: "Friday, 9am – 10am"
+  note: "Check our Facebook page for last-minute changes."

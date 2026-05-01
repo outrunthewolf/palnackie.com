@@ -324,6 +324,79 @@ a:hover { color: var(--navy); text-decoration: underline; }
   text-align: center;
 }
 
+/* HOURS BLOCK (individual pages) */
+.hours-block {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.92rem;
+}
+.hours-block h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.65rem;
+}
+.hours-row {
+  display: flex;
+  gap: 1rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--stone-mid);
+}
+.hours-row:last-of-type { border-bottom: none; }
+.hours-label {
+  font-weight: 600;
+  color: var(--navy);
+  min-width: 7rem;
+  flex-shrink: 0;
+}
+.hours-row.is-closed .hours-label,
+.hours-row.is-closed span { color: var(--text-light); }
+.hours-sub { font-size: 0.82rem; color: var(--text-light); }
+.hours-note {
+  margin-top: 0.6rem;
+  font-size: 0.84rem;
+  color: var(--text-light);
+}
+
+/* HOURS SUMMARY (homepage) */
+.hours-summary {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin: 0 0 2rem;
+}
+.hours-summary-heading {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+.hours-summary-row {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  gap: 0.4rem 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--stone-mid);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  align-items: start;
+}
+.hours-summary-row:last-child { border-bottom: none; }
+.hours-summary-venue { font-weight: 700; color: var(--navy); }
+.hours-summary-venue a { color: var(--navy); text-decoration: none; }
+.hours-summary-venue a:hover { color: var(--teal); }
+.hours-summary-times span { display: block; color: var(--text); }
+
 /* EMERGENCY TABLE */
 .emergency-table {
   width: 100%;
@@ -464,4 +537,5 @@ a:hover { color: var(--navy); text-decoration: underline; }
   .hero { padding: 2.5rem 0.75rem 2rem; }
   .card-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
+  .hours-summary-row { grid-template-columns: 1fr; gap: 0.15rem; }
 }

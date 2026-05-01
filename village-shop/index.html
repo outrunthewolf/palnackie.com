@@ -12,13 +12,30 @@ description: "Palnackie's community-owned village shop sells provisions, local p
 
 <div class="content">
 
-  <p>Our village shop sells a wide range of basic provisions, alcoholic drinks and a growing range of local and fresh produce, baked goods and gift items. Come and have a look! Please check our Facebook page to see what else is on offer today or later in the week.</p>
-
-  <p>The post office in the shop is open on <strong>Mondays and Fridays from 9am to 10am</strong>.</p>
+  <p>Our village shop sells a wide range of basic provisions, alcoholic drinks and a growing range of local and fresh produce, baked goods and gift items.</p>
 
   <p>Just outside the shop we have the village post box and our defibrillator station.</p>
 
-  <p>Please check our Facebook page for last-minute changes in opening times.</p>
+  {% assign shop = site.data.pages.village_shop %}
+  <div class="hours-block">
+    <h4>Opening Hours</h4>
+    {% if shop.opening_hours.days %}
+      {% for slot in shop.opening_hours.days %}
+      <div class="hours-row{% if slot.closed %} is-closed{% endif %}">
+        <span class="hours-label">{{ slot.day }}</span>
+        <span>{% if slot.closed %}Closed{% else %}{{ slot.times }}{% if slot.note %} <span class="hours-sub">({{ slot.note }})</span>{% endif %}{% endif %}</span>
+      </div>
+      {% endfor %}
+    {% elsif shop.opening_hours.rows %}
+      {% for row in shop.opening_hours.rows %}
+      <div class="hours-row">
+        <span class="hours-label">{{ row.label }}</span>
+        <span>{{ row.value }}</span>
+      </div>
+      {% endfor %}
+    {% endif %}
+    <p class="hours-note">{{ shop.opening_hours.note }}</p>
+  </div>
 
   <div class="contact-block">
     <h4>Contact &amp; Find Us</h4>

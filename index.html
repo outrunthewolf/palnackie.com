@@ -16,6 +16,22 @@ description: "Palnackie is a friendly, thriving small village on the estuary of 
 
 <div class="page-wrap wide">
 
+  <div class="hours-summary">
+    <p class="hours-summary-heading">Opening Hours</p>
+    {% assign venue_keys = "village_shop,flounders,glenisle_inn" | split: "," %}
+    {% for key in venue_keys %}
+      {% assign d = site.data.pages[key] %}
+      {% if d.opening_hours %}
+      <div class="hours-summary-row">
+        <span class="hours-summary-venue"><a href="{{ d.homepage_card.url }}">{{ d.homepage_card.title }}</a></span>
+        <span class="hours-summary-times">
+          <span>{{ d.opening_hours.summary }}</span>
+        </span>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
   <div class="card-grid">
 
     {% assign page_values = "" | split: "" %}
@@ -38,6 +54,8 @@ description: "Palnackie is a friendly, thriving small village on the estuary of 
 
 
   </div>
+
+
 
   <div class="map-section">
     <h2 class="map-heading">Finding Palnackie</h2>
