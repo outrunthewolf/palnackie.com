@@ -1,8 +1,8 @@
-# CLAUDE.md
+# [[projects/efficiency/CLAUDE|CLAUDE]].md
 
 ## Project Overview
 
-**Palnackie** — the official community website for Palnackie village, Dumfries and Galloway, Scotland. Target URL: `https://www.palnackie.scot`.
+**Palnackie** — the official community website for Palnackie village, Dumfries and Galloway, Scotland. Target URL: `https://www.palnackie.com`.
 
 **Goal:** A clean, modern, easily navigable community site replacing the outdated Drupal site. Serves both residents and visitors.
 

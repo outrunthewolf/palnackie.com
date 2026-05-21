@@ -20,3 +20,101 @@
   "hasMap": "{{ s.map_url }}"
 }
 </script>
+
+{% if page.data_key == 'village_shop' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Palnackie Village Shop",
+  "description": "Community-owned village shop selling provisions, local produce, baked goods and gifts, with a Post Office service.",
+  "url": "https://www.palnackie.com/village-shop/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Glen Road",
+    "addressLocality": "Palnackie",
+    "postalCode": "DG7 1PH",
+    "addressRegion": "Dumfries and Galloway",
+    "addressCountry": "GB"
+  },
+  "telephone": "+441556600456",
+  "email": "palnackievillageshop@yahoo.co.uk",
+  "openingHours": "Mo-Su 09:00-14:00"
+}
+</script>
+{% elsif page.data_key == 'flounders' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Flounders Community Cafe",
+  "description": "Award-winning community cafe in Palnackie. Dumfries and Galloway Life Cafe of the Year 2021. Coffee, cake, breakfasts and lunches.",
+  "url": "https://www.palnackie.com/flounders/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Glen Road",
+    "addressLocality": "Palnackie",
+    "postalCode": "DG7 1PH",
+    "addressRegion": "Dumfries and Galloway",
+    "addressCountry": "GB"
+  },
+  "telephone": "+441556600456",
+  "email": "palnackievillageshop@yahoo.co.uk",
+  "openingHours": "Th-Su 10:00-15:00",
+  "award": "Dumfries and Galloway Life Cafe of the Year 2021"
+}
+</script>
+{% elsif page.data_key == 'glenisle_inn' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "The Glenisle Inn",
+  "description": "Palnackie's village pub. Pints, darts, pool, sport on the TV and light bites in a welcoming community local.",
+  "url": "https://www.palnackie.com/glenisle-inn/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Palnackie",
+    "addressRegion": "Dumfries and Galloway",
+    "addressCountry": "GB"
+  },
+  "email": "theglenisleinn@gmail.com"
+}
+</script>
+{% elsif page.data_key == 'orchardton_tower' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Orchardton Tower",
+  "description": "Scotland's only free-standing round tower house, dating from the mid-15th century. Free to visit, with views from the top.",
+  "url": "https://www.palnackie.com/orchardton-tower/",
+  "isAccessibleForFree": true,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Palnackie",
+    "addressRegion": "Dumfries and Galloway",
+    "addressCountry": "GB"
+  }
+}
+</script>
+{% elsif page.data_key == 'village_hall' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CivicStructure",
+  "name": "Palnackie Village Hall",
+  "description": "Community hall available to hire for weddings, parties, classes and events. Seats up to 120 with a large lawned garden.",
+  "url": "https://www.palnackie.com/village-hall/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Port Road",
+    "addressLocality": "Palnackie",
+    "postalCode": "DG7 1PQ",
+    "addressRegion": "Dumfries and Galloway",
+    "addressCountry": "GB"
+  },
+  "telephone": "+447972273405"
+}
+</script>
+{% endif %}

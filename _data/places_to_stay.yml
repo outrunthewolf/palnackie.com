@@ -12,15 +12,7 @@
 
 - name: Raider's Rest
   address: "Palnackie, DG7 1PF"
-  description: "Farm glamping"
-  contact:
-    phones:
-      - ""
-    email: 
-    website:
-      url: ""
-      label: ""
-    facebook: ""
+  description: "Farm glamping on the outskirts of Palnackie. Contact via the Palnackie Facebook group for availability and bookings."
 
 - name: Kirkennan Estate Holiday Cottages
   address: "Palnackie, DG7 1PE"
