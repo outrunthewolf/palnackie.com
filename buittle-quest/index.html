@@ -5,6 +5,49 @@ description: "Buittle Quest SCIO — the Scottish charity set up to benefit the 
 data_key: buittle_quest
 ---
 
-{% include general_item.html %}
+{% assign d = site.data.pages[page.data_key] %}
 
+<div class="page-header">
+  <span class="tag">{{ d.tag }}</span>
+  <h1>{{ page.title }}</h1>
+  <img src="{{ site.baseurl }}/assets/images/bq-long-logo.png" alt="Buittle Quest logo" class="bq-logo">
+  <p class="lead">{{ d.lead }}</p>
+</div>
 
+<div class="content">
+
+  {{ d.body_md | markdownify }}
+
+  {% if d.contact %}
+  <div class="contact-block">
+    <h4>Contact</h4>
+    {% if d.contact.address %}
+    <div class="contact-row">
+      <i class="contact-icon">&#x1F4CD;</i>
+      <span>{{ d.contact.address }}</span>
+    </div>
+    {% endif %}
+    {% if d.contact.email %}
+    <div class="contact-row">
+      <i class="contact-icon">&#x2709;</i>
+      <span><a href="mailto:{{ d.contact.email }}">{{ d.contact.email }}</a></span>
+    </div>
+    {% endif %}
+    {% if d.contact.facebook %}
+    <div class="contact-row">
+      <i class="contact-icon">f</i>
+      <span><a href="{{ d.contact.facebook }}">{{ d.contact.facebook_label | default: "Facebook" }}</a></span>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <div class="funders-block">
+    <h4 class="funders-heading">Funded by</h4>
+    <div class="funders-logos">
+      <img src="{{ site.baseurl }}/assets/images/dumfries-and-galloway-council-logo.jpg" alt="Dumfries and Galloway Council">
+      <img src="{{ site.baseurl }}/assets/images/foundation-scotland.png" alt="Foundation Scotland">
+    </div>
+  </div>
+
+</div>

@@ -14,6 +14,16 @@ description: "Palnackie is a friendly, thriving small village on the estuary of 
   </div>
 </div>
 
+{% assign latest = site.posts.first %}
+{% if latest %}
+<div class="news-bar">
+  <div class="news-bar-inner">
+    <span class="news-bar-label">Latest News</span>
+    <a href="{{ latest.url | prepend: site.baseurl }}" class="news-bar-link">{{ latest.title }} &rarr;</a>
+  </div>
+</div>
+{% endif %}
+
 <div class="page-wrap wide">
 
   <div class="hours-summary">

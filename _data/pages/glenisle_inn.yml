@@ -3,7 +3,7 @@ homepage_card:
   show: true
   tag: "Village pub"
   title: "The Glenisle Inn"
-  description: "Open Friday, Saturday &amp; Sunday from 6pm. Pints, soft drinks, darts, pool, sport on the telly and light bites."
+  description: "Open Wednesday to Sunday. Pints, soft drinks, darts, pool, sport on the telly and light bites."
   url: "/glenisle-inn/"
   cta: "Plan a visit"
 tag: "Village pub"
@@ -15,22 +15,22 @@ body_md: |
 
   Please check the **Glenisle Inn Facebook page** for the current opening schedule and any changes to times or upcoming events.
 opening_hours:
-  summary: "Mon, Thu – Sun · Hours vary"
+  summary: "Wed – Sun · Closed Mon & Tue"
   days:
     - day: "Monday"
-      times: "2pm – 10pm"
+      closed: true
     - day: "Tuesday"
       closed: true
     - day: "Wednesday"
-      closed: true
+      times: "4pm – 8pm"
     - day: "Thursday"
       times: "4pm – 11pm"
     - day: "Friday"
       times: "3pm – midnight"
     - day: "Saturday"
-      times: "2pm – midnight"
+      times: "3pm – midnight"
     - day: "Sunday"
-      times: "1pm – 10pm"
+      times: "4pm – 10pm"
   note: "Check the Glenisle Facebook page for last-minute changes."
 contact:
   email: theglenisleinn@gmail.com

@@ -1,4 +1,4 @@
-# [[projects/efficiency/CLAUDE|CLAUDE]].md
+# CLAUDE.md
 
 ## Project Overview
 

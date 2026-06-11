@@ -1,0 +1,23 @@
+---
+layout: default
+title: News
+description: Latest news from Palnackie village and the surrounding community.
+---
+<div class="page-wrap">
+  <div class="page-header">
+    <span class="tag">Palnackie</span>
+    <h1>Village News</h1>
+    <p class="lead">Updates from Palnackie and the surrounding community.</p>
+  </div>
+
+  <div class="news-list">
+    {% for post in site.posts %}
+    <a class="news-item" href="{{ post.url | prepend: site.baseurl }}">
+      <span class="news-date">{{ post.date | date: "%-d %B %Y" }}</span>
+      <h2 class="news-title">{{ post.title }}</h2>
+      <p class="news-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+      <span class="news-read-more">Read more &rarr;</span>
+    </a>
+    {% endfor %}
+  </div>
+</div>
