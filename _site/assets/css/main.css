@@ -533,7 +533,7 @@ a:hover { color: var(--navy); text-decoration: underline; }
   display: block;
   max-width: 280px;
   height: auto;
-  margin: 1rem 0;
+  margin: 1rem auto;
 }
 
 /* FUNDERS */

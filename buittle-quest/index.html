@@ -10,13 +10,14 @@ data_key: buittle_quest
 <div class="page-header">
   <span class="tag">{{ d.tag }}</span>
   <h1>{{ page.title }}</h1>
-  <img src="{{ site.baseurl }}/assets/images/bq-long-logo.png" alt="Buittle Quest logo" class="bq-logo">
   <p class="lead">{{ d.lead }}</p>
 </div>
 
 <div class="content">
 
   {{ d.body_md | markdownify }}
+
+  <img src="{{ site.baseurl }}/assets/images/bq-long-logo.png" alt="Buittle Quest logo" class="bq-logo">
 
   {% if d.contact %}
   <div class="contact-block">
