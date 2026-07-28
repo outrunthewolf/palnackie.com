@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% seo %}
+  <title>{{ page.title | default: site.title }}</title>
+  {% seo title=false %}
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
   <script data-goatcounter="https://palnackie.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   {% include json_ld.html %}
