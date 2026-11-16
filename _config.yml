@@ -25,6 +25,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - CLAUDE.md
   - node_modules
   - vendor
   - _do_not_commit_CONTENT.txt
