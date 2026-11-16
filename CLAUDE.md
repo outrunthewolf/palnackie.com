@@ -41,6 +41,8 @@ No test suite or linting — content and template site with no JavaScript.
 - `community-council/`
 - `buittle-quest/`
 - `emergencies/`
+- `resources/` — Documents & Resources, driven by `_data/resources.yml` (files live in `assets/documents/`; `featured: true` shows on the homepage)
+- `news/` — news index; posts live in `_posts/`
 
 **Colour palette:**
 - `--navy: #1c3345` — header, headings, footer
@@ -51,7 +53,7 @@ No test suite or linting — content and template site with no JavaScript.
 
 **Navigation:**
 - Main nav: Village Shop, Flounders, Village Hall, Glenisle Inn, The Port
-- "More" CSS dropdown: Places to Stay, Orchardton Tower, Village Walks, Businesses & Services, Community Council, Buittle Quest, Emergencies
+- "More" CSS dropdown: Places to Stay, Orchardton Tower, Village Walks, Businesses & Services, Community Council, Buittle Quest, Emergencies, Village News, Documents & Resources
 
 ## Content to Add Later
 

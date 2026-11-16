@@ -1,0 +1,39 @@
+---
+layout: page
+title: "Documents & Resources"
+description: "Community documents for Palnackie and Buittle Parish — including the Local Place Plan, village walks leaflet and other plans, reports and leaflets."
+---
+<div class="page-header">
+  <span class="tag">Community</span>
+  <h1>Documents &amp; Resources</h1>
+  <p class="lead">Plans, reports and leaflets about Palnackie and Buittle Parish, free to read and download.</p>
+</div>
+
+<div class="content">
+  {% assign docs = site.data.resources.documents %}
+  {% for category in site.data.resources.categories %}
+    {% assign in_cat = docs | where: "category", category %}
+    {% if in_cat.size > 0 %}
+    <h2 class="resource-category">{{ category }}</h2>
+    <div class="resource-list">
+      {% for doc in in_cat %}
+      <div class="resource-item">
+        <h3 class="resource-title"><a href="{{ site.baseurl }}{{ doc.file }}">{{ doc.title }}</a></h3>
+        <p class="resource-meta">
+          {{ doc.format }}{% if doc.size %}, {{ doc.size }}{% endif %}{% if doc.published %} &middot; {{ doc.published }}{% endif %}{% if doc.publisher %} &middot; {{ doc.publisher }}{% endif %}
+        </p>
+        <p class="resource-desc">{{ doc.description }}</p>
+        <p class="resource-links">
+          <a href="{{ site.baseurl }}{{ doc.file }}">Download {{ doc.format }} &darr;</a>
+          {% if doc.news_url %}<a href="{{ site.baseurl }}{{ doc.news_url }}">Read the news story &rarr;</a>{% endif %}
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  {% endfor %}
+
+  <div class="info-box">
+    <p>Have a community document that should be here? Email <a href="mailto:community-council@palnackie.com">community-council@palnackie.com</a>.</p>
+  </div>
+</div>

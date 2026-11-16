@@ -1,0 +1,29 @@
+# Documents listed on /resources/.
+# Add new documents to assets/documents/ and add an entry here.
+# - category: groups documents on the resources page (categories appear in the order listed in `categories`)
+# - featured: true shows the document in the "Documents & Resources" box on the homepage (max 3 shown, in list order)
+# - news_url: optional link to a news item about the document
+
+categories:
+  - Plans & Reports
+  - Maps & Leaflets
+
+documents:
+  - title: "A Place Plan for Palnackie 2025–35"
+    description: "The Local Place Plan for Palnackie, setting out the community's priorities for buildings, land and development over the next ten years — from the school and the port to the village hall and playpark."
+    file: /assets/documents/local-place-plan-for-palnackie-final.pdf
+    format: PDF
+    size: "6.1MB"
+    published: "June 2026"
+    publisher: "Buittle Parish Community Council"
+    category: "Plans & Reports"
+    featured: true
+    news_url: /news/local-place-plan-published/
+
+  - title: "Palnackie Village Walks Leaflet"
+    description: "Route maps and local information for walks in and around Palnackie."
+    file: /assets/palnackie-village-walks.pdf
+    format: PDF
+    size: "2.4MB"
+    category: "Maps & Leaflets"
+    featured: true

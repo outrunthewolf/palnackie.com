@@ -47,6 +47,20 @@ description: "Palnackie is a friendly, thriving small village on the estuary of 
     {% endfor %}
   </div>
 
+  {% assign featured_docs = site.data.resources.documents | where: "featured", true %}
+  {% if featured_docs.size > 0 %}
+  <div class="hours-summary resources-summary">
+    <p class="hours-summary-heading">Documents &amp; Resources</p>
+    {% for doc in featured_docs limit: 3 %}
+    <div class="resources-summary-row">
+      <a href="{{ site.baseurl }}{{ doc.file }}">{{ doc.title }}</a>
+      <span class="resources-summary-meta">{{ doc.format }}{% if doc.size %}, {{ doc.size }}{% endif %}</span>
+    </div>
+    {% endfor %}
+    <p class="resources-summary-all"><a href="{{ site.baseurl }}/resources/">All documents &amp; resources &rarr;</a></p>
+  </div>
+  {% endif %}
+
   <div class="card-grid">
 
     {% assign page_values = "" | split: "" %}
