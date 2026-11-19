@@ -31,7 +31,7 @@ import urllib.parse
 import urllib.request
 
 PROJECT = "nash-claude-gcp"
-DATASET = f"{PROJECT}.searchconsole_palnackie"
+DATASET = f"{PROJECT}.searchconsole_palnackiecom"
 SITE = "https://palnackie.com"
 GOATCOUNTER = "https://palnackie.goatcounter.com"
 

@@ -67,7 +67,7 @@ No test suite or linting — content and template site with no JavaScript.
 Modelled on the dogfriendlydg setup. `scripts/site_report.py` produces a Markdown report from two read-only sources; a weekly cloud routine reads it, writes `_plans/YYYY-MM-DD.md`, makes up to 3 small changes and opens **one PR** (branch `agent/site-YYYY-MM-DD`). It never pushes to `main`. Chris reviews and merges. If last week's PR is still open, the agent comments on it instead of making new changes.
 
 **Data sources:**
-- **Search Console → BigQuery:** project `nash-claude-gcp` (location `europe-west2`), dataset `searchconsole_palnackie`, read via the `bigquery-claude-ro@nash-claude-gcp.iam.gserviceaccount.com` service account.
+- **Search Console → BigQuery:** project `nash-claude-gcp` (location `europe-west2`), dataset `searchconsole_palnackiecom`, read via the `bigquery-claude-ro@nash-claude-gcp.iam.gserviceaccount.com` service account.
 - **GoatCounter:** `palnackie.goatcounter.com`, read-only API token in `GOATCOUNTER_TOKEN`.
 
 Either source is skipped with a note if its credentials or data are missing.
@@ -77,11 +77,11 @@ Either source is skipped with a note if its credentials or data are missing.
 **Setup checklist (started 2026-11-18 — pick up here):**
 - [x] `scripts/site_report.py` written and tested (BigQuery auth works; degrades cleanly with no data/token)
 - [x] `scripts/`, `_plans/`, `parse_logs.py` excluded from Jekyll build; `_plans/` created
-- [ ] Commit + push the above to `main` (cloud routine runs from GitHub, so it can't see the script until pushed)
-- [ ] **Chris:** confirm `palnackie.com` is a verified property in Google Search Console
-- [ ] **Chris:** GSC → Settings → Bulk data export → project `nash-claude-gcp`, dataset `searchconsole_palnackie`, location `europe-west2` (export permissions should already exist from dogfriendlydg; first data lands within ~48h, no backfill)
-- [ ] **Chris:** GoatCounter → Settings → API → new token, *Read statistics* only
-- [ ] **Chris:** add it as `GOATCOUNTER_TOKEN` in the claude.ai cloud environment (alongside the existing `GCP_SA_KEY_JSON`)
+- [x] Commit + push the above to `main` (cloud routine runs from GitHub, so it can't see the script until pushed)
+- [x] **Chris:** confirm `palnackie.com` is a verified property in Google Search Console
+- [x] **Chris:** GSC → Settings → Bulk data export → project `nash-claude-gcp`, dataset `searchconsole_palnackiecom`, location `europe-west2` (export permissions should already exist from dogfriendlydg; first data lands within ~48h, no backfill)
+- [x] **Chris:** GoatCounter → Settings → API → new token, *Read statistics* only
+- [x] **Chris:** add it as `GOATCOUNTER_TOKEN` in the claude.ai cloud environment (alongside the existing `GCP_SA_KEY_JSON`)
 - [ ] Run the report locally once with both sources to sanity-check real output
 - [ ] Create the weekly cloud routine (pick day/time; self-contained prompt with the remit above, one PR per week, skip if last PR still open)
 - [ ] Set up a loop for ongoing site optimisation on top of the weekly reports
