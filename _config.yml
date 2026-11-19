@@ -29,6 +29,9 @@ exclude:
   - node_modules
   - vendor
   - _do_not_commit_CONTENT.txt
+  - scripts
+  - _plans
+  - parse_logs.py
 
 timezone: Europe/London
 lang: en-GB
