@@ -67,7 +67,7 @@ def bq_client():
     return None, "no credentials (set GCP_SA_KEY_JSON or GOOGLE_APPLICATION_CREDENTIALS)"
 
 
-def gsc_section(days):
+def gsc_section(days, long_days):
     print("\n# Part 1 — Google Search (Search Console)\n")
     bq, err = bq_client()
     if err:
@@ -94,6 +94,7 @@ def gsc_section(days):
                    DATE_SUB(mx, INTERVAL @days DAY) AS prev_end FROM bounds)
     """
     p = [bigquery.ScalarQueryParameter("days", "INT64", days)]
+    pl = [bigquery.ScalarQueryParameter("days", "INT64", long_days)]
 
     print(f"Source: `{DATASET}`. Last {days} days vs previous {days}. "
           "Position = impression-weighted average (1 = top).")
@@ -112,7 +113,7 @@ def gsc_section(days):
       FROM {u} WHERE data_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 12 WEEK)
       GROUP BY 1 ORDER BY 1""", [])
 
-    table("Pages: current vs previous window", win + f"""
+    pages_sql = win + f"""
       , agg AS (
         SELECT {page} AS pg,
           SUM(IF(data_date >= cur_start, impressions, 0)) AS ci,
@@ -127,7 +128,18 @@ def gsc_section(days):
              ROUND(SAFE_DIVIDE(cp, ci) + 1, 1) AS pos,
              pi AS prev_impr, pc AS prev_clicks,
              ROUND(SAFE_DIVIDE(pp, pi) + 1, 1) AS prev_pos
-      FROM agg WHERE ci > 0 ORDER BY ci DESC LIMIT 40""", p)
+      FROM agg WHERE ci > 0 ORDER BY ci DESC LIMIT 40"""
+    table(f"Pages: last {days} days vs previous {days}", pages_sql, p)
+
+    # Low-traffic site: a longer window is steadier than week-to-week noise.
+    table(f"Totals: last {long_days} days vs previous {long_days} (long view)", win + f"""
+      SELECT IF(data_date >= cur_start, 'current', 'previous') AS window,
+             COUNT(DISTINCT data_date) days, SUM(clicks) clicks, SUM(impressions) impressions,
+             ROUND(SAFE_DIVIDE(SUM(clicks), SUM(impressions)) * 100, 2) ctr_pct,
+             ROUND(SUM(sum_position) / SUM(impressions) + 1, 1) position
+      FROM {u}, w WHERE data_date BETWEEN prev_start AND cur_end
+      GROUP BY 1 ORDER BY 1""", pl)
+    table(f"Pages: last {long_days} days vs previous {long_days} (long view)", pages_sql, pl)
 
     table("Top queries (current window)", win + f"""
       SELECT query, SUM(impressions) impr, SUM(clicks) clicks,
@@ -173,15 +185,16 @@ def gc_get(path, params):
         return json.load(r)
 
 
-def goatcounter_section(days):
+def goatcounter_section(days, long_days):
     print("\n# Part 2 — Visitors (GoatCounter)\n")
     if not os.environ.get("GOATCOUNTER_TOKEN"):
         print("_Skipped: GOATCOUNTER_TOKEN not set._")
         return
 
     today = dt.date.today()
-    cur = (today - dt.timedelta(days=days), today)
-    prev = (today - dt.timedelta(days=2 * days), today - dt.timedelta(days=days))
+    win = lambda n: ((today - dt.timedelta(days=n), today),
+                     (today - dt.timedelta(days=2 * n), today - dt.timedelta(days=n)))
+    cur, prev = win(days)
     rng = lambda a, b: {"start": a.isoformat(), "end": b.isoformat()}
     print(f"Source: GoatCounter. Last {days} days ({cur[0]} → {cur[1]}) vs previous {days}. "
           "Counts are unique visitors.")
@@ -194,24 +207,30 @@ def goatcounter_section(days):
         except Exception as e:
             print(f"\n## {title}\n\n_Failed: {e}_")
 
-    def totals():
-        c = gc_get("/stats/total", rng(*cur)).get("total")
-        p = gc_get("/stats/total", rng(*prev)).get("total")
-        md_table("Totals", [{"window": "current", "visitors": c},
-                            {"window": "previous", "visitors": p}])
+    def fetch(a, b):
+        out = {}
+        data = gc_get("/stats/hits", {**rng(a, b), "limit": 100})
+        for h in data.get("hits", []):
+            out[h.get("path")] = (h.get("title") or "", h.get("count", 0))
+        return out
 
-    def pages():
-        def fetch(a, b):
-            out = {}
-            data = gc_get("/stats/hits", {**rng(a, b), "limit": 100})
-            for h in data.get("hits", []):
-                out[h.get("path")] = (h.get("title") or "", h.get("count", 0))
-            return out
-        c, p = fetch(*cur), fetch(*prev)
-        rows = [{"path": k, "title": v[0][:50], "visitors": v[1],
+    def page_rows(c, p):
+        return [{"path": k, "title": v[0][:50], "visitors": v[1],
                  "prev_visitors": p.get(k, ("", 0))[1]}
                 for k, v in sorted(c.items(), key=lambda kv: -kv[1][1])[:40]]
-        md_table("Pages: current vs previous window", rows)
+
+    def totals():
+        rows = []
+        for n in (days, long_days):
+            c, p = win(n)
+            rows.append({"window": f"last {n} days",
+                         "visitors": gc_get("/stats/total", rng(*c)).get("total"),
+                         "prev_visitors": gc_get("/stats/total", rng(*p)).get("total")})
+        md_table("Totals", rows)
+
+    def pages():
+        c, p = fetch(*cur), fetch(*prev)
+        md_table(f"Pages: last {days} days vs previous {days}", page_rows(c, p))
         # 404.html uses the default layout, so GoatCounter records broken links
         # with the page title "Page not found". (GoatCounter strips trailing
         # slashes, so a missing slash is NOT a sign of a broken link.)
@@ -232,8 +251,14 @@ def goatcounter_section(days):
                  [{"campaign": r.get("name"), "visitors": r.get("count")}
                   for r in data.get("stats", [])])
 
+    def long_pages():
+        lc, lp = win(long_days)
+        md_table(f"Pages: last {long_days} days vs previous {long_days} (long view)",
+                 page_rows(fetch(*lc), fetch(*lp)))
+
     safe("Totals", totals)
     safe("Pages", pages)
+    safe("Long-view pages", long_pages)
     safe("Top referrers", refs)
     safe("Campaigns", campaigns)
 
@@ -243,10 +268,13 @@ def goatcounter_section(days):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=28, help="current window length")
-    days = ap.parse_args().days
+    ap.add_argument("--long-days", type=int, default=90,
+                    help="long window length (steadier signal for a low-traffic site)")
+    a = ap.parse_args()
+    days, long_days = a.days, a.long_days
     print(f"# palnackie.com analytics report — generated {dt.date.today()}")
-    gsc_section(days)
-    goatcounter_section(days)
+    gsc_section(days, long_days)
+    goatcounter_section(days, long_days)
 
 
 if __name__ == "__main__":
