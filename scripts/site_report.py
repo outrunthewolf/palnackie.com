@@ -212,9 +212,13 @@ def goatcounter_section(days):
                  "prev_visitors": p.get(k, ("", 0))[1]}
                 for k, v in sorted(c.items(), key=lambda kv: -kv[1][1])[:40]]
         md_table("Pages: current vs previous window", rows)
-        dead = [{"path": k, "visitors": v[1]} for k, v in c.items()
-                if k and not k.endswith("/") and "." not in k.rsplit("/", 1)[-1]]
-        md_table("Paths without trailing slash (possible old links / 404s)", dead[:20])
+        # 404.html uses the default layout, so GoatCounter records broken links
+        # with the page title "Page not found". (GoatCounter strips trailing
+        # slashes, so a missing slash is NOT a sign of a broken link.)
+        dead = [{"path": k, "visitors": v[1], "prev_visitors": p.get(k, ("", 0))[1]}
+                for k, v in sorted(c.items(), key=lambda kv: -kv[1][1])
+                if v[0].strip().lower().startswith("page not found")]
+        md_table("Broken links: paths that hit the 404 page (redirect candidates)", dead[:30])
 
     def refs():
         data = gc_get("/stats/toprefs", {**rng(*cur), "limit": 30})

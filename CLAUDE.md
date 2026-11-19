@@ -82,10 +82,10 @@ Either source is skipped with a note if its credentials or data are missing.
 - [x] **Chris:** GSC → Settings → Bulk data export → project `nash-claude-gcp`, dataset `searchconsole_palnackiecom`, location `europe-west2` (export permissions should already exist from dogfriendlydg; first data lands within ~48h, no backfill)
 - [x] **Chris:** GoatCounter → Settings → API → new token, *Read statistics* only
 - [x] **Chris:** add it as `GOATCOUNTER_TOKEN` in the claude.ai cloud environment (alongside the existing `GCP_SA_KEY_JSON`)
-- [ ] Run the report locally once with both sources to sanity-check real output
-- [ ] Create the weekly cloud routine (pick day/time; self-contained prompt with the remit above, one PR per week, skip if last PR still open)
+- [x] Sanity-check real output — first run 2026-11-19 opened PR #1 (plan only; GoatCounter working after adding palnackie.goatcounter.com to the environment allowlist; Search Console tables not yet populated)
+- [x] Create the weekly cloud routine — **Palnackie — Weekly Site Agent** (`trig_01QCxcFWrJaULqVo5mAs9Vu6`), Fridays 09:00 UTC, env `palnackie.com`, Sonnet 5.5, no connectors. Manage: https://claude.ai/code/routines/trig_01QCxcFWrJaULqVo5mAs9Vu6
 - [ ] Set up a loop for ongoing site optimisation on top of the weekly reports
-- [ ] Record the routine name/id in this section
+- [x] Record the routine name/id in this section
 
 **Running locally** (local gcloud is the float work account and must stay that way):
 ```bash
