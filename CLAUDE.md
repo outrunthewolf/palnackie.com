@@ -74,6 +74,10 @@ Either source is skipped with a note if its credentials or data are missing.
 
 **Agent remit (community site, not a growth site):** improve titles/meta descriptions, internal links, clarity and findability of existing pages; add redirect stubs for old Drupal URLs still getting traffic; flag stale or missing information. It must **not** invent facts about the village, businesses, opening times, councillors or events. Anything needing real-world information goes in the plan as a question for Chris.
 
+**Thin-data weeks:** traffic is ~100 visitors/month, so the report includes a 90-day long view and the agent treats small swings as noise. When nothing clears the noise bar it works through `_plans/BACKLOG.md` ("Agent can do" items; "Needs the owner" items are Chris's). Edit that file to steer the agent.
+
+**palnackie.scot:** the old Drupal site's domain, run by an agency, showing only a "Site under maintenance" holding page (checked 2026-11-19), believed down since a PHP vulnerability scare. Goal: get it transferred to a community-held domain account and 301-forwarded to palnackie.com. palnackie.com is currently registered personally to Chris.
+
 **Setup checklist (started 2026-11-18 — pick up here):**
 - [x] `scripts/site_report.py` written and tested (BigQuery auth works; degrades cleanly with no data/token)
 - [x] `scripts/`, `_plans/`, `parse_logs.py` excluded from Jekyll build; `_plans/` created
