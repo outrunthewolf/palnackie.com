@@ -76,7 +76,7 @@ Either source is skipped with a note if its credentials or data are missing.
 
 **Thin-data weeks:** traffic is ~100 visitors/month, so the report includes a 90-day long view and the agent treats small swings as noise. When nothing clears the noise bar it works through `_plans/BACKLOG.md` ("Agent can do" items; "Needs the owner" items are Chris's). Edit that file to steer the agent.
 
-**palnackie.scot:** the old Drupal site's domain, run by an agency, showing only a "Site under maintenance" holding page (checked 2026-11-19), believed down since a PHP vulnerability scare. Goal: get it transferred to a community-held domain account and 301-forwarded to palnackie.com. palnackie.com is currently registered personally to Chris.
+**palnackie.scot:** the old Drupal site's domain, run by an agency, showing only a "Site under maintenance" holding page (checked 2026-11-19), believed down since a PHP vulnerability scare. Public WHOIS (2026-11-19): registrant organisation **Palnackie Village Shop Limited**, registrar PDR Ltd (PublicDomainRegistry, usually via a reseller — likely the agency), status `clientTransferProhibited`, **expires 2027-04-22**. Goal: the shop, as registrant, requests the transfer (EPP) code, moves it to a community-held domain account, and forwards it (301) to palnackie.com. palnackie.com is currently registered personally to Chris.
 
 **Setup checklist (started 2026-11-18 — pick up here):**
 - [x] `scripts/site_report.py` written and tested (BigQuery auth works; degrades cleanly with no data/token)
