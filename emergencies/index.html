@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Emergencies & Useful Numbers"
+title: "Emergencies & Useful Numbers in Palnackie"
+heading: "Emergencies & Useful Numbers"
 description: "Emergency contacts and useful numbers for Palnackie and Dumfries & Galloway — police, fire, ambulance, flood, utilities and more."
 data_key: emergencies
 ---
@@ -9,7 +10,7 @@ data_key: emergencies
 
 <div class="page-header">
   <span class="tag">{{ d.tag }}</span>
-  <h1>{{ page.title }}</h1>
+  <h1>{{ page.heading | default: page.title }}</h1>
   <p class="lead">{{ d.lead }}</p>
 </div>
 

@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Buittle Quest SCIO"
+title: "Buittle Quest SCIO, Palnackie Community Charity"
+heading: "Buittle Quest SCIO"
 description: "Buittle Quest SCIO — the Scottish charity set up to benefit the people of Buittle Parish. Owners of Palnackie Village Hall and the north side of the port."
 data_key: buittle_quest
 ---
@@ -9,7 +10,7 @@ data_key: buittle_quest
 
 <div class="page-header">
   <span class="tag">{{ d.tag }}</span>
-  <h1>{{ page.title }}</h1>
+  <h1>{{ page.heading | default: page.title }}</h1>
   <p class="lead">{{ d.lead }}</p>
 </div>
 
